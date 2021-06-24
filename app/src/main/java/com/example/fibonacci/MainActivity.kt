@@ -2,18 +2,17 @@ package com.example.fibonacci
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import androidx.core.app.NotificationCompatExtras
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.math.BigInteger
 
 class MainActivity : AppCompatActivity() {
-    lateinit var rvNumbers:RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-      rvNumbers=findViewById(R.id.tvNumbers)
+        var rvNumbers=findViewById<RecyclerView>(R.id.rvNumbers)
         rvNumbers.layoutManager=LinearLayoutManager(baseContext)
         var numbersAdapter=NumbersAdapter(fibonacci(100))
         rvNumbers.adapter=numbersAdapter
